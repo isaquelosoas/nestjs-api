@@ -16,7 +16,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -24,7 +25,7 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo ${{ AWS_ENVS.AWS_ACCESS_KEY_ID }}
+          echo $AWS_ACCESS_KEY_ID
           echo test, and deploy your project.
 
       - name: Configure AWS credentials
