@@ -24,7 +24,7 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo ${{ secrets.AWS_ACCESS_KEY_ID }}
+          echo ${{ AWS_ENVS.AWS_ACCESS_KEY_ID }}
           echo test, and deploy your project.
 
       - name: Configure AWS credentials
